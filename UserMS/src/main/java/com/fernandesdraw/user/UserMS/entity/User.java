@@ -1,5 +1,7 @@
 package com.fernandesdraw.user.UserMS.entity;
 
+import com.fernandesdraw.user.UserMS.dto.UserDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,4 +26,8 @@ public class User {
   private String email;
   private String password;
   private String role;
+
+  public UserDto toDto() {
+    return new UserDto(this.id, this.name, this.email, this.password, this.role);
+  }
 }
